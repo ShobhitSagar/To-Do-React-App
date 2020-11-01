@@ -1,9 +1,14 @@
 #new-task-form {
     display: flex;
+    width: 100%;
+}
+
+#new-task-input {
+    width: 100%;
 }
 
 #toast {
     position: fixed;
-    top: 2;
+    bottom: 0;
     right: 10px;
 }

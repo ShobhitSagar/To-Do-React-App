@@ -15,7 +15,7 @@ function TodoList() {
             <div id="divider"></div>
 
             <NewTask inputText={inputText} todos={todos} setInputText={setInputText} setTodos={setTodos} />
-            <TaskList todos={todos}/>
+            <TaskList todos={todos} setTodos={setTodos} />
         </div>
       </section>
     );

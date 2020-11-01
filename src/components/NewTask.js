@@ -4,7 +4,6 @@ import './NewTask.css'
 function NewTask({ inputText, setInputText, todos, setTodos }) {
 
     const inputTextHandler = (e) => {
-        console.log(e.target.value);
         setInputText(e.target.value);
     }
 
@@ -25,7 +24,7 @@ function NewTask({ inputText, setInputText, todos, setTodos }) {
 
         <div>
             <form id="new-task-form">
-                <input onChange={inputTextHandler} value={inputText} type="text" id="new-task-input"/>
+                <input onChange={inputTextHandler} value={inputText} type="text" id="new-task-input" placeholder="Add a new to do..."/>
                 <button onClick={submitTaskHandler} type="submit" className="fas fa-plus-square"></button>
             </form>
 

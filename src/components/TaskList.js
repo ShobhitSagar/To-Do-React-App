@@ -1,22 +1,15 @@
 import React from 'react';
 import Todo from './Todo';
 
-function TaskList({todos}) {
-
-    console.log("todos : "+ todos);
-
-    const showTodos = () => {
-        console.log("todos : "+ todos);
-    }
+function TaskList({ todos, setTodos }) {
 
     return(
         <div id="task" className="todo-container">
-            <ul className="todo-list">
-                <button onClick={showTodos}>Show Todos</button>
-                {todos.map((todo) => {
-                    <Todo text={todo.text} />
-                })}
-            </ul>
+            <div className="todo-list">
+                {todos.map((todo) => (
+                    <Todo text={todo.text} todo={todo} todos={todos} setTodos={setTodos} key={todo.id} />
+                ))}
+            </div>
         </div>)
 }
 
