@@ -1,0 +1,32 @@
+#main_section {
+    display: flex;
+    flex-direction: row;
+}
+
+#all_list_section {
+    position: static;
+    background-color: antiquewhite;
+    width: 300px;
+    height: 100vh;
+}
+
+#search_section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin: 30px;
+}
+
+#add_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+/* 
+@media only screen and (max-width: 860px) {
+    #all_list_section {
+        display: none;
+    }
+} */
