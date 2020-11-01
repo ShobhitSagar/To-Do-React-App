@@ -3,10 +3,12 @@ import './NewTask.css'
 
 function NewTask({ inputText, setInputText, todos, setTodos }) {
 
+    // LISTEN INPUT CHANGE
     const inputTextHandler = (e) => {
         setInputText(e.target.value);
     }
 
+    // SET USESTATE ARRAY
     const submitTaskHandler = (e) => {
         e.preventDefault();
         if (inputText !== "")
