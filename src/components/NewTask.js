@@ -24,9 +24,9 @@ function NewTask({ inputText, setInputText, todos, setTodos }) {
 
     return(
 
-        <div>
+        <div id="new-task">
             <form id="new-task-form">
-                <input onChange={inputTextHandler} value={inputText} type="text" id="new-task-input" placeholder="Add a new to do..."/>
+                <input onChange={inputTextHandler} value={inputText} type="text" id="new-task-input" autoComplete="off" spellCheck="false" placeholder="Add a new to do..."/>
                 <button onClick={submitTaskHandler} type="submit" className="fas fa-plus-square"></button>
             </form>
 

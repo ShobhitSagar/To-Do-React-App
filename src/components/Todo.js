@@ -19,7 +19,7 @@ function Todo({ text, todo, todos, setTodos }) {
 
     return(
         <div id="todo" className="todo">
-            <div><span className={`todo-item ${todo.completed ? "completed" : ''}`}>{text}</span></div>
+            <div className={`todo-item ${todo.completed ? "completed" : ''}`}>{text}</div>
             <div id="todo-btns">
                 <button onClick={completeHandler} id="complete-btn" className="fas fa-check"></button>
                 <button onClick={deleteHandler} id="trash-btn" className="fas fa-trash"></button>

@@ -3,7 +3,7 @@ import './ToDos.css'
 import NewTask from './NewTask';
 import TaskList from './TaskList';
 
-function TodoList() {
+function Todos() {
 
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
@@ -21,4 +21,4 @@ function TodoList() {
     );
 }
 
-export default TodoList;
+export default Todos;

@@ -1,10 +1,37 @@
-#new-task-form {
+#new-task {
     display: flex;
-    width: 100%;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+#new-task-form {
+    width: 90%;
+    display: flex;
+    border: 1px solid burlywood;
+    padding-left: 16px;
+    height: 50px;
+    border-radius: 5rem;
 }
 
 #new-task-input {
     width: 100%;
+    border: 0;
+    margin: auto;
+    outline: none;
+}
+
+#new-task-form button {
+    border: 0;
+    color: burlywood;
+    background-color: transparent;
+    width: 54px;
+    border-radius: 5rem;
+    outline: none;
+}
+
+#new-task-form button:hover {
+    background-color: burlywood;
+    color: white;
 }
 
 #toast {
