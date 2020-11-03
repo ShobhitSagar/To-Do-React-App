@@ -11,7 +11,7 @@ function Todos() {
     return (
       <section id="to_do_section">
         <div>
-            <span id="list_name">To do</span>
+            <span id="list_name">Today</span>
             <div id="divider"></div>
 
             <NewTask inputText={inputText} todos={todos} setInputText={setInputText} setTodos={setTodos} />

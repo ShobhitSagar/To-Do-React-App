@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './Sidebar.css'
+import './Dashboard.css'
 import ToDos from "./ToDos";
 
-function Sidebar({barClass}) {
+function Dashboard({barClass}) {
 
   const sidebarRef = useRef();
 
@@ -13,20 +13,20 @@ function Sidebar({barClass}) {
   })
 
   return (
-    <section id="main_section">
-      <section ref={sidebarRef} id="all_list_section">
+    <section id="dashboard">
+      <section ref={sidebarRef} id="sidebar">
         <section id="search_section">
-          <input type="text" />
-          <button>Search</button>
+          <input id="search-input" type="text" autoComplete="off" spellCheck="false" placeholder="Search..." />
+          <button className="fas fa-search"></button>
         </section>
 
         <div id="add_list">
-          <h1>All To Dos</h1>
-          <button>+</button>
+          <h1>All List</h1>
+          <button className="fas fa-plus-square"></button>
         </div>
 
         <ul>
-          <li>List 1</li>
+          <li className="active">Today</li>
           <li>List 2</li>
           <li>List 3</li>
           <li>List 4</li>
@@ -39,4 +39,4 @@ function Sidebar({barClass}) {
   );
 }
 
-export default Sidebar;
+export default Dashboard;

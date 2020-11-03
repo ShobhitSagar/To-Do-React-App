@@ -7,7 +7,7 @@
     padding-left: 16px;
     width: 90%;
     height: 40px;
-    border: 1px solid burlywood;
+    border: 1px solid #006064;
     border-radius: .25em;
 }
 
@@ -27,15 +27,19 @@
 }
 
 #todo-btns button {
-    color: burlywood;
+    color: #006064;
     border: 0;
     padding: 0 10px;
     background-color: white;
     outline: none;
 }
 
+#trash-btn {
+    border-radius: 0 .15em .15em 0;
+}
+
 #todo-btns button:hover {
     color: white;
     border: 0;
-    background-color: burlywood;
+    background-color: #006064;
 }
