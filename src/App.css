@@ -1,20 +1,37 @@
 #navbar {
-    background-color: #0097A7;
-    padding: 14px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
+  background-color: #0097a7;
+  padding: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
 }
 
 #navbar-name {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 #bar {
-    font-size: 30px;
-    color: #fff;
-    opacity: .7;
-    border: 0;
-    background: transparent;
-    outline: none;
+  display: none;
+  font-size: 30px;
+  color: #fff;
+  opacity: 0.7;
+  border: 0;
+  background: transparent;
+  outline: none;
+  width: 30px;
+}
+
+#navbar div {
+  width: 30px;
+}
+
+@media only screen and (max-width: 670px) {
+  #navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #bar {
+    display: block;
+  }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import './NewTask.css'
+import './styles/NewTask.css'
 
 function NewTask({ inputText, setInputText, todos, setTodos }) {
 
