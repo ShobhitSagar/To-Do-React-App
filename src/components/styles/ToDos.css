@@ -1,17 +1,17 @@
 #to_do_section {
-  margin: 40px;
-  width: 100%;
+	margin: 40px;
+	width: 100%;
 }
 
 #list_name {
-  color: #006064;
-  font-size: 30px;
+	color: #006064;
+	font-size: 30px;
 }
 
 #divider {
-  height: 2px;
-  margin: 8px 0px 18px 0px;
-  background-color: #006064;
+	height: 2px;
+	margin: 8px 0px 18px 0px;
+	background-color: #006064;
 }
 
 /* #sidebar-toggle {
