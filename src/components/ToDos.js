@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/ToDos.css";
 import NewTask from "./NewTask";
 import TaskList from "./TaskList";
 
-function Todos() {
+function Todos({ todoList }) {
 	const [inputText, setInputText] = useState("");
 	const [todos, setTodos] = useState([]);
+
+	useEffect(() => {}, [todoList]);
 
 	return (
 		<section id="to_do_section">

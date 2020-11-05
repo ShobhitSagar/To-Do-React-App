@@ -3,7 +3,25 @@ import "./styles/Dashboard.css";
 import ToDos from "./ToDos";
 
 function Dashboard({ barClass }) {
-	const [todoList, setTodoList] = useState([]);
+	const [todoList, setTodoList] = useState([
+		{
+			name: "Today",
+			active: true,
+			id: "defaulttoday1",
+			todos: [
+				{
+					text: "inputText",
+					completed: false,
+					id: Date.now(),
+				},
+				{
+					text: "inputText1",
+					completed: false,
+					id: Date.now(),
+				},
+			],
+		},
+	]);
 	const sidebarRef = useRef();
 
 	const addNewList = () => {
@@ -13,17 +31,28 @@ function Dashboard({ barClass }) {
 				...todoList,
 				{
 					name: newListName,
+					active: false,
 					id: Date.now(),
+					todos: [],
 				},
 			]);
 		}
+	};
+
+	const listClickHandler = (clickId) => {
+		setTodoList(
+			todoList.map((list) => ({
+				...list,
+				active: list.id == clickId ? true : false,
+			}))
+		);
 	};
 
 	useEffect(() => {
 		sidebarRef.current.style.display =
 			barClass === "list-ul" ? "none" : "block";
 		// if (window.innerWidth < 670) sidebarRef.current.style.position = "absolute";
-	});
+	}, [barClass, sidebarRef]);
 
 	return (
 		<section id="dashboard">
@@ -52,12 +81,18 @@ function Dashboard({ barClass }) {
 					<li>Shopping</li>
 					<li>Wedding</li>
 					{todoList.map((list) => (
-						<li key={list.id}>{list.name}</li>
+						<li
+							className={list.active ? "active" : ""}
+							onClick={() => listClickHandler(list.id)}
+							key={list.id}
+						>
+							{list.name}
+						</li>
 					))}
 				</ul>
 			</section>
 
-			<ToDos />
+			<ToDos todoList={todoList} />
 		</section>
 	);
 }
