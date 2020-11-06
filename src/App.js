@@ -7,22 +7,11 @@ function App() {
 	const [barClass, setBarClass] = useState("times");
 	const barRef = useRef();
 
-	//   useEffect(() => {
-	//     if (window.innerWidth < 670) {
-	//       setBarClass("list-ul");
-	//       // setSideBar(barClass === "list-ul" ? "none" : "block");
-	//     } else {
-	//       barRef.current.style.display = "none";
-	//     }
-	//   }, []);
-
 	const openSideBar = () => {
 		if (barClass === "list-ul") {
 			setBarClass("times");
-			// setSideBar("block");
 		} else {
 			setBarClass("list-ul");
-			// setSideBar("none");
 		}
 	};
 

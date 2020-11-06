@@ -3,11 +3,18 @@ import "./styles/ToDos.css";
 import NewTask from "./NewTask";
 import TaskList from "./TaskList";
 
-function Todos({ todoList }) {
+function Todos({ todoList, setTodoList }) {
 	const [inputText, setInputText] = useState("");
 	const [todos, setTodos] = useState([]);
 
-	useEffect(() => {}, [todoList]);
+	useEffect(() => {
+		setTodos(todoList.map((todo) => (todo.active ? todo.todos : [])));
+
+		console.log(
+			"TODOS :: ",
+			todoList.map((todo) => (todo.active ? todo.todos : []))
+		);
+	}, [todoList]);
 
 	return (
 		<section id="to_do_section">
@@ -23,7 +30,6 @@ function Todos({ todoList }) {
 				/>
 				<TaskList todos={todos} setTodos={setTodos} />
 			</div>
-			{/* <button id="sidebar-toggle" className="fas fa-arrow-circle-left"></button> */}
 		</section>
 	);
 }

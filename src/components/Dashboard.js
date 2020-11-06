@@ -12,12 +12,24 @@ function Dashboard({ barClass }) {
 				{
 					text: "inputText",
 					completed: false,
-					id: Date.now(),
+					id: "Date.now()jbj",
+				},
+			],
+		},
+		{
+			name: "Tomorrow",
+			active: false,
+			id: "defaulttoday2",
+			todos: [
+				{
+					text: "inputText2",
+					completed: false,
+					id: "Date.now()jb",
 				},
 				{
-					text: "inputText1",
+					text: "inputText12",
 					completed: false,
-					id: Date.now(),
+					id: "Date.now()sdfsd",
 				},
 			],
 		},
@@ -51,7 +63,6 @@ function Dashboard({ barClass }) {
 	useEffect(() => {
 		sidebarRef.current.style.display =
 			barClass === "list-ul" ? "none" : "block";
-		// if (window.innerWidth < 670) sidebarRef.current.style.position = "absolute";
 	}, [barClass, sidebarRef]);
 
 	return (
@@ -75,11 +86,8 @@ function Dashboard({ barClass }) {
 				</div>
 
 				<ul id="all-todo-list">
-					<li className="active">Today</li>
-					<li>Tomorrow</li>
-					<li>Work</li>
+					<li>Today</li>
 					<li>Shopping</li>
-					<li>Wedding</li>
 					{todoList.map((list) => (
 						<li
 							className={list.active ? "active" : ""}
@@ -92,7 +100,7 @@ function Dashboard({ barClass }) {
 				</ul>
 			</section>
 
-			<ToDos todoList={todoList} />
+			<ToDos todoList={todoList} setTodoList={setTodoList} />
 		</section>
 	);
 }
