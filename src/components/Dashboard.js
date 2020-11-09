@@ -86,8 +86,6 @@ function Dashboard({ barClass }) {
 				</div>
 
 				<ul id="all-todo-list">
-					<li>Today</li>
-					<li>Shopping</li>
 					{todoList.map((list) => (
 						<li
 							className={list.active ? "active" : ""}

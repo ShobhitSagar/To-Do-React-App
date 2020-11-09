@@ -4,31 +4,20 @@ import NewTask from "./NewTask";
 import TaskList from "./TaskList";
 
 function Todos({ todoList, setTodoList }) {
-	const [inputText, setInputText] = useState("");
-	const [todos, setTodos] = useState([]);
+	const [listName, setListName] = useState("");
 
 	useEffect(() => {
-		setTodos(todoList.map((todo) => (todo.active ? todo.todos : [])));
-
-		console.log(
-			"TODOS :: ",
-			todoList.map((todo) => (todo.active ? todo.todos : []))
-		);
+		setListName(todoList.map((list) => (list.active ? list.name : "")));
 	}, [todoList]);
 
 	return (
 		<section id="to_do_section">
 			<div>
-				<span id="list_name">Today</span>
+				<span id="list_name">{listName}</span>
 				<div id="divider"></div>
 
-				<NewTask
-					inputText={inputText}
-					todos={todos}
-					setInputText={setInputText}
-					setTodos={setTodos}
-				/>
-				<TaskList todos={todos} setTodos={setTodos} />
+				<NewTask todoList={todoList} setTodoList={setTodoList} />
+				<TaskList todoList={todoList} />
 			</div>
 		</section>
 	);
