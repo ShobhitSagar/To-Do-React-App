@@ -26,11 +26,6 @@ function Dashboard({ barClass }) {
 					completed: false,
 					id: "Date.now()jb",
 				},
-				{
-					text: "inputText12",
-					completed: false,
-					id: "Date.now()sdfsd",
-				},
 			],
 		},
 	]);

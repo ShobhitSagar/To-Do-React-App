@@ -9,7 +9,6 @@ function TaskList({ todoList, setTodoList }) {
 					list.active
 						? list.todos.map((todo) => (
 								<Todo
-									text={todo.text}
 									todo={todo}
 									todoList={todoList}
 									setTodoList={setTodoList}
