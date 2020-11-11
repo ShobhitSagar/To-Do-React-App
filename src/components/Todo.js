@@ -2,49 +2,26 @@ import React, { useEffect, useState } from "react";
 import "./styles/Todo.css";
 
 function Todo({ todo, todoList, setTodoList }) {
-	const [todos, setTodos] = useState([]);
-
-	useEffect(() => {
-		setTodos(todoList.map((list) => (list.active ? list.todos : null)));
-	}, [todo, todoList]);
-
 	// DELETE ELEMENT
 	const deleteHandler = () => {
-		console.log(todos);
 		setTodoList(
-			todoList.map((list) => {
-				if (list.active) {
-					console.log(list.todos);
-					list.todos.filter((el) => el.id !== todo.id);
-				}
-				return list;
-			})
+			todoList.map((prev) => ({
+				...prev,
+				todos: prev.todos.filter((el) => el.id !== todo.id),
+			}))
 		);
-		// setTodos(todos.filter((el) => el.id !== todo.id));
 	};
 
 	const completeHandler = () => {
 		setTodoList(
-			todoList.map((list) => {
-				list.todos.map((item) => {
-					if (item.id === todo.id) {
-						console.log(item.completed);
-						return { ...item, completed: !item.completed };
-					}
-					return item;
-				});
-				return list;
-			})
+			todoList.map((prev) => ({
+				...prev,
+				todos: prev.todos.map((item) => ({
+					...item,
+					completed: item.id === todo.id ? !item.completed : item.completed,
+				})),
+			}))
 		);
-
-		// setTodos(
-		// 	todos.map((item) => {
-		// 		if (item.id === todo.id) {
-		// 			return { ...item, completed: !item.completed };
-		// 		}
-		// 		return item;
-		// 	})
-		// );
 	};
 
 	return (
