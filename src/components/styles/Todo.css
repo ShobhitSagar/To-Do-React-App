@@ -1,46 +1,46 @@
 #todo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-content: stretch;
-    margin: 8px auto;
-    padding-left: 16px;
-    width: 90%;
-    height: 40px;
-    border: 1px solid #006064;
-    border-radius: .25em;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	align-content: stretch;
+	margin: 8px auto;
+	padding-left: 16px;
+	width: 90%;
+	height: 40px;
+	border: 1px solid #006064;
+	border-radius: 0.25em;
 }
 
 .todo-item {
-    width: 100%;
+	width: 100%;
 }
 
 .completed {
-    text-decoration: line-through;
-    opacity: 0.5;
+	text-decoration: line-through;
+	opacity: 0.5;
 }
 
 #todo-btns {
-    display: flex;
-    height: 38px;
-    font-size: 16px;
+	display: flex;
+	height: 38px;
+	font-size: 16px;
 }
 
 #todo-btns button {
-    color: #006064;
-    border: 0;
-    padding: 0 10px;
-    background-color: white;
-    outline: none;
-    transition: 0.3s;
+	color: #006064;
+	border: 0;
+	padding: 0 10px;
+	background-color: white;
+	outline: none;
+	transition: 0.3s;
 }
 
 #trash-btn {
-    border-radius: 0 .15em .15em 0;
+	border-radius: 0 0.15em 0.15em 0;
 }
 
 #todo-btns button:hover {
-    color: white;
-    border: 0;
-    background-color: #006064;
+	color: white;
+	border: 0;
+	background-color: #006064;
 }

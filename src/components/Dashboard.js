@@ -64,7 +64,7 @@ function Dashboard({ barClass }) {
 		<section id="dashboard">
 			{/* SIDEBAR */}
 			<section ref={sidebarRef} id="sidebar">
-				<section id="search_section">
+				{/* <section id="search_section">
 					<input
 						id="search-input"
 						type="text"
@@ -73,7 +73,7 @@ function Dashboard({ barClass }) {
 						placeholder="Search..."
 					/>
 					<button className="fas fa-search"></button>
-				</section>
+				</section> */}
 
 				<div id="add_list">
 					<h1>All List</h1>

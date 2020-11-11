@@ -57,6 +57,7 @@
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
+	margin: 20px 0px;
 }
 
 #add_list button {

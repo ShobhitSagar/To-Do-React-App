@@ -33,7 +33,7 @@ function Todo({ todo, todoList, setTodoList }) {
 				<button
 					onClick={completeHandler}
 					id="complete-btn"
-					className="fas fa-check"
+					className={`fas fa-${todo.completed ? "times" : "check"}`}
 				></button>
 				<button
 					onClick={deleteHandler}

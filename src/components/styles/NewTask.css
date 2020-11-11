@@ -1,43 +1,43 @@
 #new-task {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 30px;
 }
 
 #new-task-form {
-    width: 90%;
-    display: flex;
-    border: 1px solid #006064;
-    padding-left: 16px;
-    height: 50px;
-    border-radius: 5rem;
+	width: 90%;
+	display: flex;
+	border: 1px solid #006064;
+	padding-left: 16px;
+	height: 50px;
+	border-radius: 5rem;
 }
 
 #new-task-input {
-    width: 100%;
-    border: 0;
-    margin: auto;
-    outline: none;
+	width: 100%;
+	border: 0;
+	margin: auto;
+	outline: none;
 }
 
 #new-task-form button {
-    border: 0;
-    color: #006064;
-    font-size: 20px;
-    background-color: transparent;
-    width: 50px;
-    border-radius: 5rem;
-    outline: none;
-    transition: 0.3s;
+	border: 0;
+	color: #006064;
+	font-size: 20px;
+	background-color: transparent;
+	width: 50px;
+	border-radius: 5rem;
+	outline: none;
+	transition: 0.3s;
 }
 
 #new-task-form button:hover {
-    background-color: #006064;
-    color: white;
+	background-color: #006064;
+	color: white;
 }
 
 #toast {
-    position: fixed;
-    bottom: 0;
-    right: 10px;
+	position: fixed;
+	bottom: 0;
+	right: 10px;
 }

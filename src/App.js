@@ -34,7 +34,6 @@ function App() {
 
 			<section>
 				<Dashboard barClass={barClass} />
-				{/* <ToDoList /> */}
 			</section>
 		</div>
 	);
