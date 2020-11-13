@@ -31,6 +31,7 @@ function Todo({ mode, todo, todoList, setTodoList }) {
 			style={{
 				border: mode ? "1px solid #17223b" : "1px solid #006064",
 				backgroundColor: mode ? "#6b778d" : "white",
+				color: mode ? "white" : "black",
 			}}
 		>
 			<button

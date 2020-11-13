@@ -16,7 +16,7 @@ function App() {
 		}
 	};
 
-	// TODO: Dark Mode
+	// Dark Mode
 	const toggleMode = () => {
 		setMode(!mode);
 	};
