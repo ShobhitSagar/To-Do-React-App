@@ -1,8 +1,18 @@
-#navbar {
+.App {
+	min-height: 100vh;
+}
+nav {
 	background-color: #0097a7;
 	padding: 14px;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 30px;
+	transition: 1s;
+}
+#navbar {
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	width: 95%;
 }
 
 #navbar-name {
@@ -25,11 +35,22 @@
 	width: 30px;
 }
 
+#dark-btn {
+	font-size: 30px;
+	border: 0;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	background: transparent;
+	outline: none;
+	transition: 1s;
+}
+
 @media only screen and (max-width: 670px) {
-	#navbar {
+	/* #navbar {
 		display: flex;
 		justify-content: space-between;
-	}
+	} */
 
 	#bar {
 		display: block;

@@ -6,6 +6,7 @@ function App() {
 	// const [sideBar, setSideBar] = useState("block");
 	const [barClass, setBarClass] = useState("times");
 	const barRef = useRef();
+	const [mode, setMode] = useState(false);
 
 	const openSideBar = () => {
 		if (barClass === "list-ul") {
@@ -15,25 +16,42 @@ function App() {
 		}
 	};
 
+	// TODO: Dark Mode
+	const toggleMode = () => {
+		setMode(!mode);
+	};
+
 	return (
-		<div className="App">
-			<nav id="navbar">
-				<button
-					onClick={openSideBar}
-					ref={barRef}
-					id="bar"
-					className={`fas fa-${barClass}`}
-				></button>
-				<strong>
-					<a id="navbar-name" href="/">
-						<i className="fas fa-clipboard-list"></i> To do
-					</a>
-				</strong>
-				<div></div>
+		<div
+			style={{ backgroundColor: mode ? "#263859" : "white" }}
+			className="App"
+		>
+			<nav style={{ backgroundColor: mode ? "#17223b" : "#0097a7" }}>
+				<div id="navbar">
+					<button
+						onClick={openSideBar}
+						ref={barRef}
+						id="bar"
+						className={`fas fa-${barClass}`}
+					></button>
+					<strong>
+						<a id="navbar-name" href="/">
+							<i className="fas fa-clipboard-list"></i> To do
+						</a>
+					</strong>
+					<div>
+						<button
+							onClick={toggleMode}
+							style={{ color: mode ? "#fff" : "#005255" }}
+							id="dark-btn"
+							className={`fas fa-${mode ? "adjust" : "adjust"}`}
+						></button>
+					</div>
+				</div>
 			</nav>
 
 			<section>
-				<Dashboard barClass={barClass} />
+				<Dashboard mode={mode} barClass={barClass} />
 			</section>
 		</div>
 	);

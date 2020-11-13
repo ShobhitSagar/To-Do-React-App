@@ -1,7 +1,7 @@
 import React from "react";
 import Todo from "./Todo";
 
-function TaskList({ todoList, setTodoList }) {
+function TaskList({ mode, todoList, setTodoList }) {
 	return (
 		<div id="task" className="todo-container">
 			<div className="todo-list">
@@ -13,6 +13,7 @@ function TaskList({ todoList, setTodoList }) {
 									todoList={todoList}
 									setTodoList={setTodoList}
 									key={todo.id}
+									mode={mode}
 								/>
 						  ))
 						: ""

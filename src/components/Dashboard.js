@@ -2,32 +2,32 @@ import React, { useEffect, useRef, useState } from "react";
 import "./styles/Dashboard.css";
 import ToDos from "./ToDos";
 
-function Dashboard({ barClass }) {
+function Dashboard({ mode, barClass }) {
 	const [todoList, setTodoList] = useState([
 		{
 			name: "Today",
 			active: true,
 			id: "defaulttoday1",
 			todos: [
-				{
-					text: "inputText",
-					completed: false,
-					id: "Date.now()jbj",
-				},
+				// {
+				// 	text: "inputText",
+				// 	completed: false,
+				// 	id: "Date.now()jbj",
+				// },
 			],
 		},
-		{
-			name: "Tomorrow",
-			active: false,
-			id: "defaulttoday2",
-			todos: [
-				{
-					text: "inputText2",
-					completed: false,
-					id: "Date.now()jb",
-				},
-			],
-		},
+		// {
+		// 	name: "Tomorrow",
+		// 	active: false,
+		// 	id: "defaulttoday2",
+		// 	todos: [
+		// 		{
+		// 			text: "inputText2",
+		// 			completed: false,
+		// 			id: "Date.now()jb",
+		// 		},
+		// 	],
+		// },
 	]);
 	const sidebarRef = useRef();
 
@@ -50,7 +50,7 @@ function Dashboard({ barClass }) {
 		setTodoList(
 			todoList.map((list) => ({
 				...list,
-				active: list.id == clickId ? true : false,
+				active: list.id === clickId ? true : false,
 			}))
 		);
 	};
@@ -60,10 +60,18 @@ function Dashboard({ barClass }) {
 			barClass === "list-ul" ? "none" : "block";
 	}, [barClass, sidebarRef]);
 
+	// TODO: Implement Search
 	return (
-		<section id="dashboard">
+		<section
+			style={{ backgroundColor: mode ? "#263859" : "#fff" }}
+			id="dashboard"
+		>
 			{/* SIDEBAR */}
-			<section ref={sidebarRef} id="sidebar">
+			<section
+				style={{ backgroundColor: mode ? "#1e2d49" : "#00acc1" }}
+				ref={sidebarRef}
+				id="sidebar"
+			>
 				{/* <section id="search_section">
 					<input
 						id="search-input"
@@ -77,12 +85,31 @@ function Dashboard({ barClass }) {
 
 				<div id="add_list">
 					<h1>All List</h1>
-					<button onClick={addNewList} className="fas fa-plus-square"></button>
+					<button
+						style={{
+							backgroundColor: mode ? "#17223b" : "rgba(0, 96, 100, 0.5)",
+						}}
+						onClick={addNewList}
+						className="fas fa-plus-square"
+					></button>
 				</div>
 
 				<ul id="all-todo-list">
 					{todoList.map((list) => (
 						<li
+							style={{
+								backgroundColor: mode
+									? list.active
+										? "#263859"
+										: "transparent"
+									: list.active
+									? "#fff"
+									: "transparent",
+								color: mode ? "white" : "#006064",
+								borderLeft: mode ? "1px solid #17223b" : "1px solid white",
+								borderTop: mode ? "1px solid #17223b" : "1px solid white",
+								borderBottom: mode ? "1px solid #17223b" : "1px solid white",
+							}}
 							className={list.active ? "active" : ""}
 							onClick={() => listClickHandler(list.id)}
 							key={list.id}
@@ -93,7 +120,7 @@ function Dashboard({ barClass }) {
 				</ul>
 			</section>
 
-			<ToDos todoList={todoList} setTodoList={setTodoList} />
+			<ToDos mode={mode} todoList={todoList} setTodoList={setTodoList} />
 		</section>
 	);
 }

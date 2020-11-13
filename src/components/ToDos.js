@@ -3,7 +3,7 @@ import "./styles/ToDos.css";
 import NewTask from "./NewTask";
 import TaskList from "./TaskList";
 
-function Todos({ todoList, setTodoList }) {
+function Todos({ mode, todoList, setTodoList }) {
 	const [listName, setListName] = useState("");
 
 	useEffect(() => {
@@ -13,11 +13,23 @@ function Todos({ todoList, setTodoList }) {
 	return (
 		<section id="to_do_section">
 			<div>
-				<span id="list_name">{listName}</span>
-				<div id="divider"></div>
+				<span
+					style={{
+						color: mode ? "White" : "#006064",
+					}}
+					id="list_name"
+				>
+					{listName}
+				</span>
+				<div
+					style={{
+						backgroundColor: mode ? "White" : "#006064",
+					}}
+					id="divider"
+				></div>
 
-				<NewTask todoList={todoList} setTodoList={setTodoList} />
-				<TaskList todoList={todoList} setTodoList={setTodoList} />
+				<NewTask mode={mode} todoList={todoList} setTodoList={setTodoList} />
+				<TaskList mode={mode} todoList={todoList} setTodoList={setTodoList} />
 			</div>
 		</section>
 	);

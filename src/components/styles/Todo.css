@@ -4,11 +4,13 @@
 	align-items: center;
 	align-content: stretch;
 	margin: 8px auto;
-	padding-left: 16px;
+	color: white;
+	/* padding-left: 16px; */
 	width: 90%;
 	height: 40px;
 	border: 1px solid #006064;
 	border-radius: 0.25em;
+	transition: 1s;
 }
 
 .todo-item {
@@ -20,27 +22,29 @@
 	opacity: 0.5;
 }
 
-#todo-btns {
+/* #todo-btns {
 	display: flex;
 	height: 38px;
 	font-size: 16px;
-}
+} */
 
-#todo-btns button {
-	color: #006064;
+#todo button {
+	color: white;
 	border: 0;
+	width: 40px;
+	height: 40px;
 	padding: 0 10px;
-	background-color: white;
+	background-color: transparent;
 	outline: none;
-	transition: 0.3s;
+	transition: 1s;
 }
 
 #trash-btn {
 	border-radius: 0 0.15em 0.15em 0;
 }
 
-#todo-btns button:hover {
+/* #todo-btns button:hover {
 	color: white;
 	border: 0;
 	background-color: #006064;
-}
+} */

@@ -1,6 +1,7 @@
 #dashboard {
 	display: flex;
 	flex-direction: row;
+	transition: 1s;
 }
 
 /* Sidebar */
@@ -10,7 +11,7 @@
 	color: white;
 	width: 400px;
 	min-height: 100vh;
-	/* transition: display 1s; */
+	transition: 1s;
 }
 
 #search_section {
@@ -83,15 +84,22 @@
 	transition: 0.3s;
 	margin: 4px 0px;
 	display: flex;
+	border-radius: 0.2em 0 0 0.2em;
 	flex-direction: row;
 	justify-content: flex-start;
+	cursor: pointer;
+	border-left: 1px solid white;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+	transition: 1s;
 }
 
-#all-todo-list li:hover {
+/* #all-todo-list li:hover {
 	cursor: pointer;
-	border: 1px solid white;
-	border-radius: 0.2em 0 0 0.2em;
-}
+	border-left: 1px solid white;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+} */
 
 .active {
 	background-color: white;

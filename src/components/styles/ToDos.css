@@ -6,12 +6,14 @@
 #list_name {
 	color: #006064;
 	font-size: 30px;
+	transition: 1s;
 }
 
 #divider {
 	height: 2px;
 	margin: 8px 0px 18px 0px;
 	background-color: #006064;
+	transition: 1s;
 }
 
 /* #sidebar-toggle {

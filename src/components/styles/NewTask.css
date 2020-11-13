@@ -7,10 +7,11 @@
 #new-task-form {
 	width: 90%;
 	display: flex;
+	align-items: center;
 	border: 1px solid #006064;
 	padding-left: 16px;
 	height: 50px;
-	border-radius: 5rem;
+	border-radius: 5px;
 }
 
 #new-task-input {
@@ -22,19 +23,21 @@
 
 #new-task-form button {
 	border: 0;
-	color: #006064;
+	color: white;
 	font-size: 20px;
-	background-color: transparent;
+	/* background-color: transparent; */
 	width: 50px;
-	border-radius: 5rem;
+	height: 50px;
+	margin-right: -1px;
+	border-radius: 5px;
 	outline: none;
-	transition: 0.3s;
+	transition: 1s;
 }
 
-#new-task-form button:hover {
+/* #new-task-form button:hover {
 	background-color: #006064;
 	color: white;
-}
+} */
 
 #toast {
 	position: fixed;

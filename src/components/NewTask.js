@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./styles/NewTask.css";
 
-function NewTask({ todoList, setTodoList }) {
+function NewTask({ mode, todoList, setTodoList }) {
 	const [inputText, setInputText] = useState("");
 
 	// LISTEN INPUT CHANGE
@@ -31,8 +31,15 @@ function NewTask({ todoList, setTodoList }) {
 
 	return (
 		<div id="new-task">
-			<form id="new-task-form">
+			<form
+				style={{
+					border: mode ? "1px solid #17223b" : "1px solid #006064",
+					backgroundColor: mode ? "#fff" : "white",
+				}}
+				id="new-task-form"
+			>
 				<input
+					style={{ backgroundColor: mode ? "transparent" : "white" }}
 					onChange={inputTextHandler}
 					value={inputText}
 					type="text"
@@ -42,6 +49,7 @@ function NewTask({ todoList, setTodoList }) {
 					placeholder="Add a new to do..."
 				/>
 				<button
+					style={{ backgroundColor: mode ? "#17223b" : "#006064" }}
 					onClick={submitTaskHandler}
 					type="submit"
 					className="fas fa-plus-square"
