@@ -1,7 +1,7 @@
 import React from "react";
 import Todo from "./Todo";
 
-function TaskList({ mode, todoList, setTodoList }) {
+function TaskList({ mode, lightTheme, darkTheme, todoList, setTodoList }) {
 	return (
 		<div id="task" className="todo-container">
 			<div className="todo-list">
@@ -14,6 +14,8 @@ function TaskList({ mode, todoList, setTodoList }) {
 									setTodoList={setTodoList}
 									key={todo.id}
 									mode={mode}
+									lightTheme={lightTheme}
+									darkTheme={darkTheme}
 								/>
 						  ))
 						: ""

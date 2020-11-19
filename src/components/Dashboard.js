@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./styles/Dashboard.css";
 import ToDos from "./ToDos";
 
-function Dashboard({ mode, barClass }) {
+function Dashboard({ mode, lightTheme, darkTheme, barClass }) {
 	const [todoList, setTodoList] = useState([
 		{
 			name: "Today",
@@ -33,7 +33,7 @@ function Dashboard({ mode, barClass }) {
 
 	const addNewList = () => {
 		const newListName = prompt("Add new list name:");
-		if (newListName !== "") {
+		if (newListName !== "" && newListName !== null) {
 			setTodoList([
 				...todoList,
 				{
@@ -63,12 +63,12 @@ function Dashboard({ mode, barClass }) {
 	// TODO: Implement Search
 	return (
 		<section
-			style={{ backgroundColor: mode ? "#263859" : "#fff" }}
+			style={{ backgroundColor: mode ? darkTheme[3] : "#fff" }}
 			id="dashboard"
 		>
 			{/* SIDEBAR */}
 			<section
-				style={{ backgroundColor: mode ? "#1e2d49" : "#00acc1" }}
+				style={{ backgroundColor: mode ? darkTheme[2] : "#00acc1" }}
 				ref={sidebarRef}
 				id="sidebar"
 			>
@@ -87,7 +87,7 @@ function Dashboard({ mode, barClass }) {
 					<h1>All List</h1>
 					<button
 						style={{
-							backgroundColor: mode ? "#17223b" : "rgba(0, 96, 100, 0.5)",
+							backgroundColor: mode ? darkTheme[4] : "rgba(0, 96, 100, 0.5)",
 						}}
 						onClick={addNewList}
 						className="fas fa-plus-square"
@@ -100,15 +100,12 @@ function Dashboard({ mode, barClass }) {
 							style={{
 								backgroundColor: mode
 									? list.active
-										? "#263859"
+										? darkTheme[3]
 										: "transparent"
 									: list.active
 									? "#fff"
 									: "transparent",
 								color: mode ? "white" : "#006064",
-								borderLeft: mode ? "1px solid #17223b" : "1px solid white",
-								borderTop: mode ? "1px solid #17223b" : "1px solid white",
-								borderBottom: mode ? "1px solid #17223b" : "1px solid white",
 							}}
 							className={list.active ? "active" : ""}
 							onClick={() => listClickHandler(list.id)}
@@ -120,7 +117,13 @@ function Dashboard({ mode, barClass }) {
 				</ul>
 			</section>
 
-			<ToDos mode={mode} todoList={todoList} setTodoList={setTodoList} />
+			<ToDos
+				mode={mode}
+				lightTheme={lightTheme}
+				darkTheme={darkTheme}
+				todoList={todoList}
+				setTodoList={setTodoList}
+			/>
 		</section>
 	);
 }

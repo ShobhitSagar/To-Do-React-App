@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/Todo.css";
 
-function Todo({ mode, todo, todoList, setTodoList }) {
+function Todo({ mode, lightTheme, darkTheme, todo, todoList, setTodoList }) {
 	// DELETE ELEMENT
 	const deleteHandler = () => {
 		setTodoList(
